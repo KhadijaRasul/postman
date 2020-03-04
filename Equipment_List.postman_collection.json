@@ -1,0 +1,2423 @@
+{
+	"info": {
+		"_postman_id": "ec8ff98d-7833-4272-8f8b-20c7b2461bdb",
+		"name": "Equipment_List",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Removed",
+			"item": [
+				{
+					"name": "Code is not alphanumeric",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1f031e8e-24a8-4fa9-b3e5-b7b375e9e98e",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"Status code name has string : error message\", function() {",
+									"    pm.expect(pm.response.text()).to.include(\"Bad Request\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tenantId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"name\": \"apiEquipmentFeb18\",\n  \"code\": 123,\n  \"description\": \"testing post from postman\",\n  \"criticality\": 7,\n  \"barcode\": \"1234\",\n  \"unspscCode\": 123,\n  \"availability\": true,\n  \"make\": \"ford\",\n  \"serialNumber\": \"1234\",\n  \"model\": \"focus\",\n  \"notes\": \"1st postman test for POL-44\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments",
+							"protocol": "https",
+							"host": [
+								"equipment-mgmt-service",
+								"fiixcmms-ball",
+								"com"
+							],
+							"path": [
+								"equipments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Name is not alphanumeric",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1f031e8e-24a8-4fa9-b3e5-b7b375e9e98e",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"Status code name has string : error message\", function() {",
+									"    pm.expect(pm.response.text()).to.include(\"Bad Request\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tenantId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"name\": true,\n  \"code\": \"apiCodeFeb18\",\n  \"description\": \"testing post from postman_name is boolean\",\n  \"criticality\": 7,\n  \"barcode\": \"1234\",\n  \"unspscCode\": 123,\n  \"availability\": true,\n  \"make\": \"ford\",\n  \"serialNumber\": \"1234\",\n  \"model\": \"focus\",\n  \"notes\": \"1st postman test for POL-44\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments",
+							"protocol": "https",
+							"host": [
+								"equipment-mgmt-service",
+								"fiixcmms-ball",
+								"com"
+							],
+							"path": [
+								"equipments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Description is not alphanumeric",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1f031e8e-24a8-4fa9-b3e5-b7b375e9e98e",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"Status code name has string : error message\", function() {",
+									"    pm.expect(pm.response.text()).to.include(\"Bad Request\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tenantId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"name\": \"apiEquipmentFeb18\",\n  \"code\": \"apiCodeFeb18\",\n  \"description\": 123,\n  \"criticality\": 7,\n  \"barcode\": \"1234\",\n  \"unspscCode\": 123,\n  \"availability\": true,\n  \"make\": \"ford\",\n  \"serialNumber\": \"1234\",\n  \"model\": \"focus\",\n  \"notes\": \"1st postman test for POL-44\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments",
+							"protocol": "https",
+							"host": [
+								"equipment-mgmt-service",
+								"fiixcmms-ball",
+								"com"
+							],
+							"path": [
+								"equipments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "barcode is not alphanumeric",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1f031e8e-24a8-4fa9-b3e5-b7b375e9e98e",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"Status code name has string : error message\", function() {",
+									"    pm.expect(pm.response.text()).to.include(\"Bad Request\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tenantId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"name\": true,\n  \"code\": \"apiCodeFeb18\",\n  \"description\": \"testing post from postman_name is boolean\",\n  \"criticality\": 7,\n  \"barcode\": false,\n  \"unspscCode\": 123,\n  \"availability\": true,\n  \"make\": \"ford\",\n  \"serialNumber\": \"1234\",\n  \"model\": \"focus\",\n  \"notes\": \"1st postman test for POL-44\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments",
+							"protocol": "https",
+							"host": [
+								"equipment-mgmt-service",
+								"fiixcmms-ball",
+								"com"
+							],
+							"path": [
+								"equipments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UNSPC is not alphanumeric",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1f031e8e-24a8-4fa9-b3e5-b7b375e9e98e",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"Status code name has string : error message\", function() {",
+									"    pm.expect(pm.response.text()).to.include(\"Bad Request\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tenantId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"name\": true,\n  \"code\": \"apiCodeFeb18\",\n  \"description\": \"testing post from postman_name is boolean\",\n  \"criticality\": 7,\n  \"barcode\": \"1234\",\n  \"unspscCode\": 123,\n  \"availability\": true,\n  \"make\": \"ford\",\n  \"serialNumber\": \"1234\",\n  \"model\": \"focus\",\n  \"notes\": \"1st postman test for POL-44\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments",
+							"protocol": "https",
+							"host": [
+								"equipment-mgmt-service",
+								"fiixcmms-ball",
+								"com"
+							],
+							"path": [
+								"equipments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Make is not alphanumeric",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1f031e8e-24a8-4fa9-b3e5-b7b375e9e98e",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"Status code name has string : error message\", function() {",
+									"    pm.expect(pm.response.text()).to.include(\"Bad Request\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tenantId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"name\": true,\n  \"code\": \"apiCodeFeb18\",\n  \"description\": \"testing post from postman_name is boolean\",\n  \"criticality\": 7,\n  \"barcode\": \"1234\",\n  \"unspscCode\": 123,\n  \"availability\": true,\n  \"make\": true,\n  \"serialNumber\": \"1234\",\n  \"model\": \"focus\",\n  \"notes\": \"1st postman test for POL-44\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments",
+							"protocol": "https",
+							"host": [
+								"equipment-mgmt-service",
+								"fiixcmms-ball",
+								"com"
+							],
+							"path": [
+								"equipments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Model is not alphanumeric",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1f031e8e-24a8-4fa9-b3e5-b7b375e9e98e",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"Status code name has string : error message\", function() {",
+									"    pm.expect(pm.response.text()).to.include(\"Bad Request\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tenantId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"name\": true,\n  \"code\": \"apiCodeFeb18\",\n  \"description\": \"testing post from postman_name is boolean\",\n  \"criticality\": 7,\n  \"barcode\": \"1234\",\n  \"unspscCode\": 123,\n  \"availability\": true,\n  \"make\": \"ford\",\n  \"serialNumber\": \"1234\",\n  \"model\": 12345,\n  \"notes\": \"1st postman test for POL-44\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments",
+							"protocol": "https",
+							"host": [
+								"equipment-mgmt-service",
+								"fiixcmms-ball",
+								"com"
+							],
+							"path": [
+								"equipments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Note is not alphanumeric",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1f031e8e-24a8-4fa9-b3e5-b7b375e9e98e",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"Status code name has string : error message\", function() {",
+									"    pm.expect(pm.response.text()).to.include(\"Bad Request\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tenantId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"name\": true,\n  \"code\": \"apiCodeFeb18\",\n  \"description\": \"testing post from postman_name is boolean\",\n  \"criticality\": 7,\n  \"barcode\": \"1234\",\n  \"unspscCode\": 123,\n  \"availability\": true,\n  \"make\": \"ford\",\n  \"serialNumber\": \"1234\",\n  \"model\": \"focus\",\n  \"notes\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments",
+							"protocol": "https",
+							"host": [
+								"equipment-mgmt-service",
+								"fiixcmms-ball",
+								"com"
+							],
+							"path": [
+								"equipments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Serial no. is not alphanumeric",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1f031e8e-24a8-4fa9-b3e5-b7b375e9e98e",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"Status code name has string : error message\", function() {",
+									"    pm.expect(pm.response.text()).to.include(\"Bad Request\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tenantId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"name\": true,\n  \"code\": \"apiCodeFeb18\",\n  \"description\": \"testing post from postman_name is boolean\",\n  \"criticality\": 7,\n  \"barcode\": \"1234\",\n  \"unspscCode\": 123,\n  \"availability\": true,\n  \"make\": \"ford\",\n  \"serialNumber\": 1234,\n  \"model\": \"focus\",\n  \"notes\": \"1st postman test for POL-44\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments",
+							"protocol": "https",
+							"host": [
+								"equipment-mgmt-service",
+								"fiixcmms-ball",
+								"com"
+							],
+							"path": [
+								"equipments"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "validation",
+					"item": [
+						{
+							"name": "Code missing",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1f031e8e-24a8-4fa9-b3e5-b7b375e9e98e",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"Status code name has string : Bad Reequest\", function() {",
+											"    pm.response.to.have.status(\"Bad Request\");",
+											"});",
+											"",
+											"pm.test(\"Error message: Code is mandatory\", function() {",
+											"    pm.expect(pm.response.text()).to.include(\"Code is mandatory\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"tenantId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"name\": \"apiEquipmentFeb18_unspc_feb25\",\n  \"description\": \"testing post from postman\",\n  \"criticality\": 7,\n  \"barcode\": \"1234\",\n  \"unspscCode\": \"987_unspc\" ,\n  \"availability\": true,\n  \"make\": \"ford\",\n  \"serialNumber\": \"1234\",\n  \"model\": \"focus\",\n  \"notes\": \"1st postman test for POL-44\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"equipments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Name missing",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1f031e8e-24a8-4fa9-b3e5-b7b375e9e98e",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"Status code name has string : Bad Reequest\", function() {",
+											"    pm.response.to.have.status(\"Bad Request\");",
+											"});",
+											"",
+											"pm.test(\"Error message: Name is mandatory\", function() {",
+											"    pm.expect(pm.response.text()).to.include(\"Name is mandatory\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"tenantId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"code\": \"apiCodeFeb18_name\",\n  \"description\": \"testing post from postman\",\n  \"criticality\": 7,\n  \"barcode\": \"1234\",\n  \"unspscCode\": 123,\n  \"availability\": true,\n  \"make\": \"ford\",\n  \"serialNumber\": \"1234\",\n  \"model\": \"focus\",\n  \"notes\": \"1st postman test for POL-44\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"equipments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Name, Availability and Code missing",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1d53e0ca-e960-4288-887a-23d0fa2ca692",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"Status code name has string : Bad Reequest\", function() {",
+											"    pm.response.to.have.status(\"Bad Request\");",
+											"});",
+											"",
+											"pm.test(\"Error message: Name and Code are madatory\", function() {",
+											"    pm.expect(pm.response.text()).to.include(\"Status is mandatory\");",
+											"    pm.expect(pm.response.text()).to.include(\"Code is mandatory\");",
+											"    pm.expect(pm.response.text()).to.include(\"Name is mandatory\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"tenantId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"description\": \"testing post from postman_name and code missing\",\n  \"criticality\": 7,\n  \"barcode\": \"1234\",\n  \"unspscCode\": 123,\n  \"make\": \"ford\",\n  \"serialNumber\": \"1234\",\n  \"model\": \"focus\",\n  \"notes\": \"1st postman test for POL-44\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"equipments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Criticality is not number",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1f031e8e-24a8-4fa9-b3e5-b7b375e9e98e",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"Status code name has string : Bad Reequest\", function() {",
+											"    pm.response.to.have.status(\"Bad Request\");",
+											"});",
+											"",
+											"pm.test(\"Error message: not a valid integer\", function() {",
+											"    pm.expect(pm.response.text()).to.include(\"not a valid Integer value\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"tenantId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"name\": \"apiEquipmentFeb18\",\n  \"code\": \"apiCodeFeb18\",\n  \"description\": \"testing post from postman\",\n  \"criticality\":\"test_criticality\",\n  \"barcode\": \"1234\",\n  \"unspscCode\": 123,\n  \"availability\": true,\n  \"make\": \"ford\",\n  \"serialNumber\": \"1234\",\n  \"model\": \"focus\",\n  \"notes\": \"1st postman test for POL-44\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"equipments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Criticality is not a whole number",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1f031e8e-24a8-4fa9-b3e5-b7b375e9e98e",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});",
+											"",
+											"pm.test(\"Status code name has string : Created\", function() {",
+											"    pm.response.to.have.status(\"Created\");",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"tenantId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"name\": \"apiEquipmentFeb18\",\n  \"code\": \"apiCodeFeb18\",\n  \"description\": \"testing post from postman\",\n  \"criticality\": 7.5,\n  \"barcode\": \"1234\",\n  \"unspscCode\": 123,\n  \"availability\": true,\n  \"make\": \"ford\",\n  \"serialNumber\": \"1234\",\n  \"model\": \"focus\",\n  \"notes\": \"1st postman test for POL-44\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"equipments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Criticality is nonpositiive  number",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1f031e8e-24a8-4fa9-b3e5-b7b375e9e98e",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"Status code name has string : Bad Reequest\", function() {",
+											"    pm.response.to.have.status(\"Bad Request\");",
+											"});",
+											"",
+											"pm.test(\"Error message: Criticality must be in the range 1 to 10\", function() {",
+											"    pm.expect(pm.response.text()).to.include(\"Criticality must be in the range 1 to 10\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"tenantId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"name\": \"apiEquipmentFeb18\",\n  \"code\": \"apiCodeFeb18\",\n  \"description\": \"testing post from postman\",\n  \"criticality\": 0,\n  \"barcode\": \"1234\",\n  \"unspscCode\": 123,\n  \"availability\": true,\n  \"make\": \"ford\",\n  \"serialNumber\": \"1234\",\n  \"model\": \"focus\",\n  \"notes\": \"1st postman test for POL-44\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"equipments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Criticality is number  beyond range",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1f031e8e-24a8-4fa9-b3e5-b7b375e9e98e",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"Status code name has string : Bad Reequest\", function() {",
+											"    pm.response.to.have.status(\"Bad Request\");",
+											"});",
+											"",
+											"pm.test(\"Error message: Criticality must be in the range 1 to 10\", function() {",
+											"    pm.expect(pm.response.text()).to.include(\"Criticality must be in the range 1 to 10\");",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"tenantId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"name\": \"apiEquipmentFeb18\",\n  \"code\": \"apiCodeFeb18\",\n  \"description\": \"testing post from postman\",\n  \"criticality\": 100,\n  \"barcode\": \"1234\",\n  \"unspscCode\": 123,\n  \"availability\": true,\n  \"make\": \"ford\",\n  \"serialNumber\": \"1234\",\n  \"model\": \"focus\",\n  \"notes\": \"1st postman test for POL-44\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"equipments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Availability is not boolean",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1f031e8e-24a8-4fa9-b3e5-b7b375e9e98e",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"Status code name has string : error message\", function() {",
+											"    pm.expect(pm.response.text()).to.include(\"Bad Request\");",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"tenantId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"name\": true,\n  \"code\": \"apiCodeFeb18\",\n  \"description\": \"testing post from postman_name is boolean\",\n  \"criticality\": 7,\n  \"barcode\": \"1234\",\n  \"unspscCode\": 123,\n  \"availability\": \"off\",\n  \"make\": \"ford\",\n  \"serialNumber\": \"1234\",\n  \"model\": \"focus\",\n  \"notes\": \"1st postman test for POL-44\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"equipments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Availability missing",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1f031e8e-24a8-4fa9-b3e5-b7b375e9e98e",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"Status code name has string : error message\", function() {",
+											"    pm.expect(pm.response.text()).to.include(\"Bad Request\");",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"tenantId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"name\": true,\n  \"code\": \"apiCodeFeb18\",\n  \"description\": \"testing post from postman_name is boolean\",\n  \"criticality\": 7,\n  \"barcode\": \"1234\",\n  \"unspscCode\": 123,\n  \"make\": \"ford\",\n  \"serialNumber\": \"1234\",\n  \"model\": \"focus\",\n  \"notes\": \"1st postman test for POL-44\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"equipments"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Correct post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1f031e8e-24a8-4fa9-b3e5-b7b375e9e98e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"pm.test(\"Status code name has string : Created\", function() {",
+									"    pm.response.to.have.status(\"Created\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tenantId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"name\": \"apiEquipmentFeb18\",\n  \"code\": \"apiCodeFeb18\",\n  \"description\": \"testing post from postman\",\n  \"criticality\": 7,\n  \"barcode\": \"1234\",\n  \"unspscCode\": 123,\n  \"availability\": true,\n  \"make\": \"ford\",\n  \"serialNumber\": \"1234\",\n  \"model\": \"focus\",\n  \"notes\": \"1st postman test for POL-44\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments",
+							"protocol": "https",
+							"host": [
+								"equipment-mgmt-service",
+								"fiixcmms-ball",
+								"com"
+							],
+							"path": [
+								"equipments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "empty tag",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments",
+							"protocol": "https",
+							"host": [
+								"equipment-mgmt-service",
+								"fiixcmms-ball",
+								"com"
+							],
+							"path": [
+								"equipments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "error message",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f31a3774-bfb2-49fd-8240-bec909ee7d0a",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"Status code name has string : error message\", function() {",
+									"    pm.expect(pm.response.text()).to.include(\"Bad Request\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tenantId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"name\": \"string\",\n  \"unspscCode\": \"stringoTestInsteadOfNo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments",
+							"protocol": "https",
+							"host": [
+								"equipment-mgmt-service",
+								"fiixcmms-ball",
+								"com"
+							],
+							"path": [
+								"equipments"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "Account",
+					"item": [
+						{
+							"name": "get account list status check",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "88a272e9-c888-415c-88da-2dbf69c2994f",
+										"exec": [
+											"pm.test(\"Status code is 200\", function() {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Status code name has string : OK\", function() {",
+											"    pm.response.to.have.status(\"OK\");",
+											"});",
+											"",
+											"",
+											"",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "01825cab-9ba9-41d1-ac2e-0fbae1b7d28d",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json",
+										"disabled": true
+									},
+									{
+										"key": "Fiix-Tenant-Id",
+										"type": "text",
+										"value": "20"
+									}
+								],
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/accounts?pageSize=50&sortBy=name",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"accounts"
+									],
+									"query": [
+										{
+											"key": "pageSize",
+											"value": "50"
+										},
+										{
+											"key": "sortBy",
+											"value": "name"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get account visible elements exists",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "30af8985-92ca-4059-a0d3-6ada96545922",
+										"exec": [
+											"pm.test(\"Check if 3 basic fields exist\", function() {",
+											"    if(pm.response.to.have.status(\"OK\")){",
+											"        var jsonResponse = pm.response.json();",
+											"        ",
+											"         pm.expect(jsonResponse.items[0]).to.have.property('id');",
+											"        pm.expect(jsonResponse.items[0].id).to.be.a('number');",
+											"",
+											"        pm.expect(jsonResponse.items[0]).to.have.property('code');",
+											"        pm.expect(jsonResponse.items[0].code).to.be.a('string');",
+											"        ",
+											"        pm.expect(jsonResponse.items[0]).to.have.property('name');",
+											"        pm.expect(jsonResponse.items[0].name).to.be.a('string');",
+											"        ",
+											"       ",
+											"        ",
+											"        ",
+											"       ",
+											"    }",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/accounts?{{pageNumber}}&{{pageSize}}",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"accounts"
+									],
+									"query": [
+										{
+											"key": "{{pageNumber}}",
+											"value": null
+										},
+										{
+											"key": "{{pageSize}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get Total no. of record",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "76028e95-8c05-4df5-afc8-85f908e1a79f",
+										"exec": [
+											"pm.test(\"Check if all the fields exist\", function() {",
+											"    if(pm.response.to.have.status(\"OK\")){",
+											"        var jsonResponse = pm.response.json();",
+											"        var itemsPerPage=jsonResponse.items.length",
+											"",
+											"        pm.test(\"total no. of records : 99\", function() {",
+											"            pm.expect(jsonResponse.totalElements).to.eql(itemsPerPage);",
+											"        });",
+											"    }",
+											"});",
+											"",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "bebee2f7-20d7-4c8d-acc2-e7169086ce58",
+										"exec": [
+											"pm.globals.set(\"pageNumberE\", \"1\");",
+											"pm.globals.set(\"pageSizeE\", \"99\");"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/accounts??pageNumber={{pageNumberE}}&pageSize={{pageSizeE}}",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"accounts"
+									],
+									"query": [
+										{
+											"key": "?pageNumber",
+											"value": "{{pageNumberE}}"
+										},
+										{
+											"key": "pageSize",
+											"value": "{{pageSizeE}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Match account name 1st and last",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "aae64c49-a97c-483d-b161-02f05b30400b",
+										"exec": [
+											"pm.globals.set(\"pageNumberE\", \"1\");",
+											"pm.globals.set(\"pageSizeE\", \"100\");",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "40ca6e0b-8703-4a58-acee-10b562a5b5e6",
+										"exec": [
+											"pm.test(\"Check if content matches with database\", function() {",
+											"    if(pm.response.to.have.status(\"OK\")){",
+											"        var jsonResponse = pm.response.json();",
+											"        var lastIndex=jsonResponse.items.length-1;",
+											"        ",
+											"        pm.test(\"Account 1st code and 50th code matching\", function () {",
+											"        pm.expect(jsonResponse.items[0].code).to.eql(\"101\");",
+											"        pm.expect(jsonResponse.items[lastIndex].code).to.eql(\"774\");",
+											"});",
+											"    ",
+											"    }",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/accounts?pageNumber={{pageNumberE}}&pageSize={{pageSizeE}}",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"accounts"
+									],
+									"query": [
+										{
+											"key": "pageNumber",
+											"value": "{{pageNumberE}}"
+										},
+										{
+											"key": "pageSize",
+											"value": "{{pageSizeE}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get exceeding page limit",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "d14f95ef-1dbf-4aa3-814a-de5d1ac3584e",
+										"exec": [
+											"pm.globals.set(\"pageNumberE\", \"2\");",
+											"pm.globals.set(\"pageSizeE\", \"99\");",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "95bc4582-4687-4665-8782-ff8eb65636e9",
+										"exec": [
+											"pm.test(\"Check if content matches with database\", function() {",
+											"    if(pm.response.to.have.status(\"OK\")){",
+											"        var jsonResponse = pm.response.json();",
+											"        var noOfItem=jsonResponse.items.length;",
+											"        ",
+											"        pm.expect(noOfItem).to.eql(0);",
+											"",
+											"    ",
+											"    }",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Fiix-Tenant-Id",
+										"type": "text",
+										"value": "20",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/accounts?pageNumber={{pageNumberE}}&pageSize={{pageSizeE}}",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"accounts"
+									],
+									"query": [
+										{
+											"key": "pageNumber",
+											"value": "{{pageNumberE}}"
+										},
+										{
+											"key": "pageSize",
+											"value": "{{pageSizeE}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get pagination for pageSize 10",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "6344bb15-f402-46f9-94c0-0ee0ef0dc8c8",
+										"exec": [
+											"pm.globals.set(\"pageNumberE\", \"1\");",
+											"pm.globals.set(\"pageSizeE\", \"10\");",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "de6ef2c5-900b-4ae8-a92b-e3392b4423df",
+										"exec": [
+											"pm.test(\" page size: 10\", function() {",
+											"    if(pm.response.to.have.status(\"OK\")){",
+											"        var jsonResponse = pm.response.json();",
+											"        //converting string to integer",
+											"        var totalRecordsInOnePage=+pm.globals.get(\"pageSizeE\");",
+											"        var itemsPerPage=jsonResponse.items.length",
+											"        pm.expect(itemsPerPage).to.eql(totalRecordsInOnePage);",
+											"",
+											"    ",
+											"    }",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/accounts?pageNumber={{pageNumberE}}&pageSize={{pageSizeE}}",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"accounts"
+									],
+									"query": [
+										{
+											"key": "pageNumber",
+											"value": "{{pageNumberE}}"
+										},
+										{
+											"key": "pageSize",
+											"value": "{{pageSizeE}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get pagination for pageSize 99",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c4fc19e1-cc7b-40d3-bd39-464d8407e951",
+										"exec": [
+											"pm.test(\" page size: 99\", function() {",
+											"    if(pm.response.to.have.status(\"OK\")){",
+											"        var jsonResponse = pm.response.json();",
+											"        //converting string to integer",
+											"        var totalRecordsInOnePage=+pm.globals.get(\"pageSizeE\");",
+											"        var itemsPerPage=jsonResponse.items.length",
+											"        pm.expect(itemsPerPage).to.eql(totalRecordsInOnePage);",
+											"",
+											"    ",
+											"    }",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "ccd4c5a8-50e1-4c66-993b-3bb50f113558",
+										"exec": [
+											"pm.globals.set(\"pageNumberE\", \"1\");",
+											"pm.globals.set(\"pageSizeE\", \"99\");",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Fiix-Tenant-Id",
+										"type": "text",
+										"value": "20",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/accounts?pageNumber={{pageNumberE}}&pageSize={{pageSizeE}}",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"accounts"
+									],
+									"query": [
+										{
+											"key": "pageNumber",
+											"value": "{{pageNumberE}}"
+										},
+										{
+											"key": "pageSize",
+											"value": "{{pageSizeE}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get pagination for pageSize 50",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "88580971-8f33-4ef5-9ae5-f8e47e4a1972",
+										"exec": [
+											"pm.globals.set(\"pageNumberE\", \"1\");",
+											"pm.globals.set(\"pageSizeE\", \"50\");",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "73cc24f9-8aca-4fc6-947c-499a3eecbbdd",
+										"exec": [
+											"pm.test(\" page size: 50\", function() {",
+											"    if(pm.response.to.have.status(\"OK\")){",
+											"        var jsonResponse = pm.response.json();",
+											"        //converting string to integer",
+											"        var totalRecordsInOnePage=+pm.globals.get(\"pageSizeE\");",
+											"        var itemsPerPage=jsonResponse.items.length",
+											"        pm.expect(itemsPerPage).to.eql(totalRecordsInOnePage);",
+											"",
+											"    ",
+											"    }",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Fiix-Tenant-Id",
+										"type": "text",
+										"value": "20",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/accounts?pageNumber={{pageNumberE}}&pageSize={{pageSizeE}}",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"accounts"
+									],
+									"query": [
+										{
+											"key": "pageNumber",
+											"value": "{{pageNumberE}}"
+										},
+										{
+											"key": "pageSize",
+											"value": "{{pageSizeE}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "EquipmentList",
+					"item": [
+						{
+							"name": "get equipment list status check",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "88a272e9-c888-415c-88da-2dbf69c2994f",
+										"exec": [
+											"pm.test(\"Status code is 200\", function() {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Status code name has string : OK\", function() {",
+											"    pm.response.to.have.status(\"OK\");",
+											"});",
+											"",
+											"",
+											"",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "01825cab-9ba9-41d1-ac2e-0fbae1b7d28d",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Fiix-Tenant-Id",
+										"value": "20",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments?pageNumber=-2&{{pageSize}}",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"equipments"
+									],
+									"query": [
+										{
+											"key": "pageNumber",
+											"value": "-2"
+										},
+										{
+											"key": "{{pageSize}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get equipment list status for tenantid=1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "88a272e9-c888-415c-88da-2dbf69c2994f",
+										"exec": [
+											"pm.test(\"Status code is 404\", function() {",
+											"    pm.response.to.have.status(404);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Status code name has string : Not Found\", function() {",
+											"    pm.response.to.have.status(\"Not Found\");",
+											"});",
+											"",
+											"",
+											"pm.test(\"Error message: No data found for tenant\", function () {",
+											"    pm.expect(pm.response.text()).to.include(\"No data found for tenant\");",
+											"});",
+											"",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "01825cab-9ba9-41d1-ac2e-0fbae1b7d28d",
+										"exec": [
+											"pm.request.headers.upsert({key:'Fiix-Tenant-Id',value:'1'})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Fiix-Tenant-Id",
+										"value": "20",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments?{{pageNumber}}&{{pageSize}}",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"equipments"
+									],
+									"query": [
+										{
+											"key": "{{pageNumber}}",
+											"value": null
+										},
+										{
+											"key": "{{pageSize}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get equipment visible elements exists",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "30af8985-92ca-4059-a0d3-6ada96545922",
+										"exec": [
+											"pm.test(\"Check if all 10 basic fields exist\", function() {",
+											"    if(pm.response.to.have.status(\"OK\")){",
+											"        var jsonResponse = pm.response.json();",
+											"",
+											"        pm.expect(jsonResponse.items[0]).to.have.property('id');",
+											"        pm.expect(jsonResponse.items[0].id).to.be.a('string');",
+											"        ",
+											"        pm.expect(jsonResponse.items[0]).to.have.property('tenantId');",
+											"        pm.expect(jsonResponse.items[0].tenantId).to.be.a('string');",
+											"        ",
+											"        pm.expect(jsonResponse.items[0]).to.have.property('code');",
+											"        pm.expect(jsonResponse.items[0].code).to.be.a('string');",
+											"        ",
+											"        pm.expect(jsonResponse.items[0]).to.have.property('name');",
+											"        pm.expect(jsonResponse.items[0].name).to.be.a('string');",
+											"        ",
+											"        pm.expect(jsonResponse.items[0]).to.have.property('categoryName');",
+											"        pm.expect(jsonResponse.items[0].categoryName).to.be.a('string');",
+											"        ",
+											"        pm.expect(jsonResponse.items[0]).to.have.property('serialNumber');",
+											"        pm.expect(jsonResponse.items[0].serialNumber).to.be.a('string');",
+											"        ",
+											"        pm.expect(jsonResponse.items[0]).to.have.property('barcode');",
+											"        pm.expect(jsonResponse.items[0].barcode).to.be.a('string');",
+											"        ",
+											"        pm.expect(jsonResponse.items[0]).to.have.property('manufacturerName');",
+											"        pm.expect(jsonResponse.items[0].manufacturerName).to.be.a('string');",
+											"        ",
+											"        pm.expect(jsonResponse.items[0]).to.have.property('state');pm.expect(jsonResponse.items[0].state).to.be.a('boolean');",
+											"        ",
+											"        pm.expect(jsonResponse.items[0]).to.have.property('createdAt');",
+											"        pm.expect(jsonResponse.items[0].createdAt).to.be.a('string');",
+											"        ",
+											"        ",
+											"       ",
+											"    }",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Fiix-Tenant-Id",
+										"value": "20",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments?{{pageNumber}}&{{pageSize}}",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"equipments"
+									],
+									"query": [
+										{
+											"key": "{{pageNumber}}",
+											"value": null
+										},
+										{
+											"key": "{{pageSize}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get Total no. of record",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "76028e95-8c05-4df5-afc8-85f908e1a79f",
+										"exec": [
+											"pm.test(\"Check if all the fields exist\", function() {",
+											"    if(pm.response.to.have.status(\"OK\")){",
+											"        var jsonResponse = pm.response.json();",
+											"",
+											"        pm.test(\"total no. of records : 50\", function() {",
+											"            pm.expect(jsonResponse.totalElements).to.eql(50);",
+											"        });",
+											"    }",
+											"});",
+											"",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Fiix-Tenant-Id",
+										"value": "20",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments?{{pageNumber}}&{{pageSize}}",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"equipments"
+									],
+									"query": [
+										{
+											"key": "{{pageNumber}}",
+											"value": null
+										},
+										{
+											"key": "{{pageSize}}",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get match content for first and last record",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "aae64c49-a97c-483d-b161-02f05b30400b",
+										"exec": [
+											"pm.globals.set(\"pageNumberE\", \"1\");",
+											"pm.globals.set(\"pageSizeE\", \"50\");",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "40ca6e0b-8703-4a58-acee-10b562a5b5e6",
+										"exec": [
+											"pm.test(\"Check if content matches with database\", function() {",
+											"    if(pm.response.to.have.status(\"OK\")){",
+											"        var jsonResponse = pm.response.json();",
+											"        var lastIndex=jsonResponse.items.length-1;",
+											"        ",
+											"        pm.test(\"Equipment name 1st and last\", function () {",
+											"        pm.expect(jsonResponse.items[0].code).to.eql(\"AMET-DCD01\");",
+											"        pm.expect(jsonResponse.items[lastIndex].code).to.eql(\"VEH-303\");",
+											"});",
+											"    ",
+											"    }",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Fiix-Tenant-Id",
+										"value": "20",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments?pageNumber={{pageNumberE}}&pageSize={{pageSizeE}}",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"equipments"
+									],
+									"query": [
+										{
+											"key": "pageNumber",
+											"value": "{{pageNumberE}}"
+										},
+										{
+											"key": "pageSize",
+											"value": "{{pageSizeE}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get pagination for pageSize 10",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "6344bb15-f402-46f9-94c0-0ee0ef0dc8c8",
+										"exec": [
+											"pm.globals.set(\"pageNumberE\", \"1\");",
+											"pm.globals.set(\"pageSizeE\", \"10\");",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "de6ef2c5-900b-4ae8-a92b-e3392b4423df",
+										"exec": [
+											"pm.test(\" page size: 10\", function() {",
+											"    if(pm.response.to.have.status(\"OK\")){",
+											"        var jsonResponse = pm.response.json();",
+											"        var totalRecordsInOnePage=(jsonResponse.totalElements)/(jsonResponse.totalPages);",
+											"        ",
+											"        var itemsPerPage=jsonResponse.items.length",
+											"        ",
+											"      ",
+											"        pm.expect(itemsPerPage).to.eql(totalRecordsInOnePage);",
+											"",
+											"    ",
+											"    }",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments?pageNumber={{pageNumberE}}&pageSize={{pageSizeE}}",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"equipments"
+									],
+									"query": [
+										{
+											"key": "pageNumber",
+											"value": "{{pageNumberE}}"
+										},
+										{
+											"key": "pageSize",
+											"value": "{{pageSizeE}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get pagination for pageSize 25",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "88580971-8f33-4ef5-9ae5-f8e47e4a1972",
+										"exec": [
+											"pm.globals.set(\"pageNumberE\", \"1\");",
+											"pm.globals.set(\"pageSizeE\", \"25\");",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "73cc24f9-8aca-4fc6-947c-499a3eecbbdd",
+										"exec": [
+											"pm.test(\" page size: 25\", function() {",
+											"    if(pm.response.to.have.status(\"OK\")){",
+											"        var jsonResponse = pm.response.json();",
+											"        var totalRecordsInOnePage=(jsonResponse.totalElements)/(jsonResponse.totalPages);",
+											"        ",
+											"        var itemsPerPage=jsonResponse.items.length",
+											"        ",
+											"      ",
+											"        pm.expect(itemsPerPage).to.eql(totalRecordsInOnePage);",
+											"",
+											"    ",
+											"    }",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Fiix-Tenant-Id",
+										"type": "text",
+										"value": "20",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments?pageNumber={{pageNumberE}}&pageSize={{pageSizeE}}",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"equipments"
+									],
+									"query": [
+										{
+											"key": "pageNumber",
+											"value": "{{pageNumberE}}"
+										},
+										{
+											"key": "pageSize",
+											"value": "{{pageSizeE}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get pagination for pageSize 50",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c4fc19e1-cc7b-40d3-bd39-464d8407e951",
+										"exec": [
+											"pm.test(\" page size: 50\", function() {",
+											"    if(pm.response.to.have.status(\"OK\")){",
+											"        var jsonResponse = pm.response.json();",
+											"        var totalRecordsInOnePage=(jsonResponse.totalElements)/(jsonResponse.totalPages);",
+											"        ",
+											"        var itemsPerPage=jsonResponse.items.length",
+											"        ",
+											"      ",
+											"        pm.expect(itemsPerPage).to.eql(totalRecordsInOnePage);",
+											"",
+											"    ",
+											"    }",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "ccd4c5a8-50e1-4c66-993b-3bb50f113558",
+										"exec": [
+											"pm.globals.set(\"pageNumberE\", \"1\");",
+											"pm.globals.set(\"pageSizeE\", \"50\");",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Fiix-Tenant-Id",
+										"type": "text",
+										"value": "20",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments?pageNumber={{pageNumberE}}&pageSize={{pageSizeE}}",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"equipments"
+									],
+									"query": [
+										{
+											"key": "pageNumber",
+											"value": "{{pageNumberE}}"
+										},
+										{
+											"key": "pageSize",
+											"value": "{{pageSizeE}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get exceeding page limit",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "d14f95ef-1dbf-4aa3-814a-de5d1ac3584e",
+										"exec": [
+											"pm.globals.set(\"pageNumberE\", \"2\");",
+											"pm.globals.set(\"pageSizeE\", \"50\");",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "95bc4582-4687-4665-8782-ff8eb65636e9",
+										"exec": [
+											"pm.test(\"Check if content matches with database\", function() {",
+											"    if(pm.response.to.have.status(\"OK\")){",
+											"        var jsonResponse = pm.response.json();",
+											"        var noOfItem=jsonResponse.items.length;",
+											"        ",
+											"        pm.expect(noOfItem).to.eql(0);",
+											"",
+											"    ",
+											"    }",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Fiix-Tenant-Id",
+										"type": "text",
+										"value": "20",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://equipment-mgmt-service.fiixcmms-ball.com/equipments?pageNumber={{pageNumberE}}&pageSize={{pageSizeE}}",
+									"protocol": "https",
+									"host": [
+										"equipment-mgmt-service",
+										"fiixcmms-ball",
+										"com"
+									],
+									"path": [
+										"equipments"
+									],
+									"query": [
+										{
+											"key": "pageNumber",
+											"value": "{{pageNumberE}}"
+										},
+										{
+											"key": "pageSize",
+											"value": "{{pageSizeE}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "6a0c6de7-6f41-4a9f-893a-cc395653fb08",
+				"type": "text/javascript",
+				"exec": [
+					"pm.request.headers.add({key:'Fiix-Tenant-Id',value:'20'})"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "207242d3-6008-4b86-8648-acba9a9290b2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
